@@ -54,7 +54,7 @@ namespace ConsoleScraper
                                     financePage.DocumentNode.SelectSingleNode("//table")
                                                             .Descendants("tr")
                                                             .Skip(1)
-                                                            .Where(tr => tr.Elements("td").Count() > 1)
+                                                            .Where(tr => tr.Elements("td").Count()>1)
                                                             .Select(tr => tr.Elements("td").Select(td => td.InnerText.Trim()).ToList())
                                                             .ToList();           
 

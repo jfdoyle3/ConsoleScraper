@@ -14,15 +14,15 @@ namespace ConsoleScraper
         public List<List<string>> ReadFile()
         {
             string stocks = File.ReadAllText(@"C:\website\Stocks.htm");
-            HtmlDocument htmlFile = new HtmlDocument();
+            HtmlDocument yahooPage = new HtmlDocument();
 
-            htmlFile.LoadHtml(stocks);
+            yahooPage.LoadHtml(stocks);
 
 
             List<List<string>> stockTable =
-                                    htmlFile.DocumentNode.SelectSingleNode("//table")
+                                    yahooPage.DocumentNode.SelectSingleNode("//table")
                                                 .Descendants("tr")
-                                                .Skip(1) //To Skip Table Header Row
+                                                .Skip(1) 
                                                 .Where(tr => tr.Elements("td").Count() > 1)
                                                 .Select(tr => tr.Elements("td").Select(td => td.InnerText.Trim()).ToList())
                                                 .ToList();
