@@ -35,7 +35,7 @@ namespace ConsoleScraper
                     db.SaveChanges();
                 }
                 
-                Console.WriteLine("All data in the database:");
+                Console.WriteLine("\n\nStock data entered into the database.");
                 
             }
         }
