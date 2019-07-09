@@ -14,10 +14,14 @@ namespace ConsoleScraper
 
        public  List<List<string>> Login()
         {
-            using (IWebDriver driver = new ChromeDriver())
-            {
-                driver.Navigate().GoToUrl("https://finance.yahoo.com");
+            ChromeOptions option = new ChromeOptions();
+            option.AddArgument("--headless");
+            option.AddArgument("window-size=1200,1100");
 
+            using (IWebDriver driver = new ChromeDriver(option))
+            { 
+                driver.Navigate().GoToUrl("https://finance.yahoo.com");
+            
                 WebDriverWait waitSignIn = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                 waitSignIn.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("uh-signedin")));
 
