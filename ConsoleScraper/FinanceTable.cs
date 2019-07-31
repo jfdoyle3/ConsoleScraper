@@ -12,7 +12,7 @@ namespace ConsoleScraper
         public static void ScrapeToDatabase(List<List<string>> stockData)
         {
             string method = "HAP";
-            using (StocksContext db = new StocksContext())
+            using (HapStocksContext db = new HapStocksContext())
             {
                 
                 for (int i = 0; i < stockData.Count; i++)

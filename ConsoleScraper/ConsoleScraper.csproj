@@ -92,56 +92,56 @@
   <ItemGroup>
     <Compile Include="FinanceTable.cs" />
     <Compile Include="FromFile.cs" />
+    <Compile Include="HapStocks.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HapStocks.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HapStocks.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HapStocks.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HapStocks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HapStocks.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stocks.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Stocks.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Stocks.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Stocks.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Stocks.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Stocks.edmx</DependentUpon>
-    </Compile>
     <Compile Include="StockTable.cs">
-      <DependentUpon>Stocks.tt</DependentUpon>
+      <DependentUpon>HapStocks.tt</DependentUpon>
     </Compile>
     <Compile Include="YahooFinance.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
-    <EntityDeploy Include="Stocks.edmx">
+    <EntityDeploy Include="HapStocks.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Stocks.Designer.cs</LastGenOutput>
+      <LastGenOutput>HapStocks.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Stocks.edmx.diagram">
-      <DependentUpon>Stocks.edmx</DependentUpon>
+    <None Include="HapStocks.edmx.diagram">
+      <DependentUpon>HapStocks.edmx</DependentUpon>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\packages\PhantomJS.2.1.1\tools\phantomjs\phantomjs.exe">
       <Link>phantomjs.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="HapStocks.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HapStocks.edmx</DependentUpon>
+      <LastGenOutput>HapStocks.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HapStocks.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HapStocks.edmx</DependentUpon>
+      <LastGenOutput>HapStocks.cs</LastGenOutput>
+    </Content>
     <Content Include="phantomjs-license.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Stocks.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Stocks.edmx</DependentUpon>
-      <LastGenOutput>Stocks.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Stocks.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Stocks.edmx</DependentUpon>
-      <LastGenOutput>Stocks.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
