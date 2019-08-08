@@ -35,7 +35,7 @@ namespace ConsoleScraper
                 LoginField.SendKeys("jfdoyle_iii");
                 LoginField.SendKeys(Keys.Enter);
 
-                WebDriverWait waitPassword= new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                WebDriverWait waitPassword= new WebDriverWait(driver, TimeSpan.FromSeconds(20));
                 waitPassword.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("login-passwd")));
 
 
