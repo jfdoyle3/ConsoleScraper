@@ -10,9 +10,6 @@ namespace ConsoleScraper
     {
         static void Main(string[] args)
         {
-            //FromFile scrape = new FromFile();
-            // List<List<string>> stockTable = scrape.ReadFile();
-
             YahooFinance scrape = new YahooFinance();
             List<List<string>> stockTable = scrape.Login();
 
@@ -23,8 +20,8 @@ namespace ConsoleScraper
                     Console.WriteLine(stockTable[i][j].ToString());
                 }
             }
-            //
-            FinanceTable.ScrapeToDatabase(stockTable);
+
+            SQLWriteDB.HAPDBStocks(stockTable);
         }
     }
 }
