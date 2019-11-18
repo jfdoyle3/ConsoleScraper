@@ -10,7 +10,7 @@ namespace ConsoleScraper
     {
         static void Main(string[] args)
         {
-            YahooFinance scrape = new YahooFinance();
+            YahooFinanceScraper scrape = new YahooFinanceScraper();
             List<List<string>> stockTable = scrape.Login();
             SQLWriteDB.HAPDBStocks(stockTable);
         }
