@@ -12,7 +12,7 @@ namespace ConsoleScraper
     {
         public static void HAPDBStocks(List<List<string>> stockData)
         {
-            Console.Write("Connecting to  DB: ");
+            Console.Write("Connecting to DB: ");
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HapDB;Integrated Security=True";
 
             string type = "HAP";
@@ -25,7 +25,7 @@ namespace ConsoleScraper
                  {
                     connection.Open();
 
-                    SqlCommand insertStatement = new SqlCommand("INSERT into [HAPStocks] (DateStamp, Symbol, LastPrice, Change, ChgPc, MarketTime, Volume, AvgVol3m, MarketCap,Method) VALUES (@DateStamp, @Symbol, @LastPrice, @Change, @ChgPc, @MarketTime, @Volume, @AvgVol3m, @MarketCap, @Method)", connection);
+                    SqlCommand insertStatement = new SqlCommand("INSERT into [HapStocks] (DateStamp, Symbol, LastPrice, Change, ChgPc, MarketTime, Volume, AvgVol3m, MarketCap,Method) VALUES (@DateStamp, @Symbol, @LastPrice, @Change, @ChgPc, @MarketTime, @Volume, @AvgVol3m, @MarketCap, @Method)", connection);
                     insertStatement.Parameters.AddWithValue("@DateStamp", DateTime.Now.ToString());
                     insertStatement.Parameters.AddWithValue("@Symbol", stockData[i][0].ToString());
                     insertStatement.Parameters.AddWithValue("@LastPrice", stockData[i][1].ToString());
