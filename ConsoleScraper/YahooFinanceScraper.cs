@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace ConsoleScraper
 {
-    public class YahooFinance
+    public class YahooFinanceScraper
     {
 
        public  List<List<string>> Login()
