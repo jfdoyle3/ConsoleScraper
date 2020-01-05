@@ -12,6 +12,7 @@ namespace ConsoleScraper
     {
         public static void HAPDBStocks(List<List<string>> stockData)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write("Connecting to DB: ");
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HapDB;Integrated Security=True";
 
@@ -19,7 +20,9 @@ namespace ConsoleScraper
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("Successful\n");
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.Write("Writing to HapDB: ");
                 for (int i = 0; i < stockData.Count; i++)
                  {
@@ -41,6 +44,7 @@ namespace ConsoleScraper
                     insertStatement.ExecuteNonQuery();
                     connection.Close();
                 }
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("Successful");
             }
         }
